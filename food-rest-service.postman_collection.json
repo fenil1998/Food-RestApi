@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "f11274c4-5bf1-4b42-9456-d670572f1938",
+		"name": "food-rest-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-food-item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/food/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"food",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-food-all-items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/foods/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"foods",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save_food_item",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
