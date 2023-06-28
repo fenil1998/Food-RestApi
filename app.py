@@ -1,5 +1,5 @@
 from flask import Flask,request
-from db.MongoUtils import MongoDBConnection
+from fooddb.MongoUtils import MongoDBConnection
 
 
 mycoll =  MongoDBConnection('uniqueRecipe','food-items','mongodb+srv://test:Testdb123@cluster0.zyemaal.mongodb.net/?retryWrites=true&w=majority').create_connection()
