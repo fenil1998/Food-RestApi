@@ -1,14 +1,14 @@
 from flask import Flask,request
-from MongoUtils import MongoDBConnection
+from db.MongoUtils import MongoDBConnection
 
 
-mycoll =  MongoDBConnection('uniqueRecipe','food-items','mongodb://localhost:27017/').create_connection()
+mycoll =  MongoDBConnection('uniqueRecipe','food-items','mongodb+srv://test:Testdb123@cluster0.zyemaal.mongodb.net/?retryWrites=true&w=majority').create_connection()
 
 app = Flask(__name__)
 
 
 env = {
-    'name' : 'foodenv',
+    'name' : 'app.py',
     'version': 'V1.0'
 }
 
@@ -22,10 +22,10 @@ def greet():
 @app.get('/api/food/<int:id>')
 def get_food_item(id):
     if mycoll is not None:
-        data = mycoll.find_one({'id':id})
+        data = mycoll.find_one({'_id':id})
         if data:
             return data
-        return 'Food item not found.'
+        return {"response": 'Food item not found.'}
     return 'Service is not available.'
 
 
@@ -76,4 +76,4 @@ def delete_food_item():
 if __name__ == '__main__':
     # create db connection..
 
-    app.run(debug=True,port=1333)
+    app.run(port = 1555)
